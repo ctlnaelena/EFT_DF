@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Asta (versión HTML + JavaScript): catálogo de videojuegos generado dinámicamente." />
+  <title>Asta | Versión JavaScript</title>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+  <a class="visually-hidden-focusable" href="#catalogo">Saltar al catálogo</a>
+
+  <!-- Encabezado y navegación -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top pv-navbar" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">
+          <img src="../img/marca/asta-logo.webp" alt="Asta" class="pv-logo-texto" width="600" height="193" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+          aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto gap-lg-1">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="../">Versión React</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="pv-hero" aria-labelledby="titulo-hero">
+      <div class="container pv-hero__inner">
+        <div class="pv-hero__text">
+          <p class="pv-eyebrow mb-2">Versión HTML + JavaScript</p>
+          <h1 id="titulo-hero" class="pv-hero__title">Tu próxima partida <span>empieza aquí</span></h1>
+          <p class="lead mt-3 mb-4">Las tarjetas de esta página se generan con JavaScript a partir de un objeto de datos.</p>
+          <a href="#catalogo" class="btn btn-accent btn-lg">Ver catálogo</a>
+        </div>
+        <figure class="pv-hero__ilustracion mb-0">
+          <img src="../img/marca/rana-heroe.webp" alt="Ilustración de Asta: una rana con espada volando sobre un ganso" width="900" height="828" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="pv-section" aria-labelledby="titulo-catalogo">
+      <div class="container">
+        <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+          <div>
+            <p class="pv-eyebrow mb-1">Catálogo</p>
+            <h2 id="titulo-catalogo" class="mb-0">Videojuegos disponibles</h2>
+          </div>
+          <div class="pv-select-wrap">
+            <label for="filtro-select" class="form-label small mb-1">Filtrar por categoría</label>
+            <select id="filtro-select" class="form-select"></select>
+          </div>
+        </header>
+
+        <div id="filtros" class="pv-filters mb-4" role="group" aria-label="Filtrar por categoría"></div>
+        <p id="contador" class="text-secondary small mb-3" aria-live="polite"></p>
+        <div id="lista-juegos" class="pv-grid"></div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="pv-section pv-section--alt" aria-labelledby="titulo-contacto">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-5">
+            <p class="pv-eyebrow mb-1">Contacto</p>
+            <h2 id="titulo-contacto">¿Tienes dudas? Escríbenos</h2>
+            <p class="text-secondary">Responderemos dentro de 24 horas hábiles.</p>
+          </div>
+          <div class="col-lg-7">
+            <form id="form-contacto" class="pv-panel" novalidate>
+              <div id="alerta-form" class="alert d-none" role="alert"></div>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input id="nombre" name="nombre" type="text" class="form-control" autocomplete="name" placeholder="Tu nombre" />
+                <div class="invalid-feedback" id="error-nombre"></div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="email" class="form-control" autocomplete="email" placeholder="tu@correo.cl" />
+                <div class="invalid-feedback" id="error-email"></div>
+              </div>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" class="form-control" placeholder="Cuéntanos en qué te podemos ayudar"></textarea>
+                <div class="invalid-feedback" id="error-mensaje"></div>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pv-footer">
+    <div class="container pv-footer__inner">
+      <p class="mb-0 small">© <span id="anio"></span> Asta · Proyecto académico</p>
+      <a href="../" class="small">Ir a la versión React</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
