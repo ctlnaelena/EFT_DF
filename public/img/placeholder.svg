@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" role="img" aria-label="Carátula no disponible">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6666ff"/>
+      <stop offset="1" stop-color="#0c0c16"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="900" fill="url(#g)"/>
+  <path d="M190 400h220a50 50 0 0 1 50 50v30a50 50 0 0 1-88 32l-14-18H242l-14 18a50 50 0 0 1-88-32v-30a50 50 0 0 1 50-50z" fill="#0c0c16" opacity=".85"/>
+  <circle cx="390" cy="450" r="14" fill="#b9f0d7"/>
+  <circle cx="420" cy="480" r="14" fill="#b9f0d7"/>
+  <path d="M200 465h56M228 437v56" stroke="#c9e8ff" stroke-width="16" stroke-linecap="round"/>
+  <text x="300" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#c9e8ff">Carátula no disponible</text>
+</svg>
